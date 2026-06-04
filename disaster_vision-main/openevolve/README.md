@@ -24,6 +24,8 @@ python openevolve-run.py \
   --iterations 60
 ```
 
+For Google Cloud execution, see `../cloud/README.md`.
+
 ## Notes
 
 - The starting recipe is the `after_only` baseline.
