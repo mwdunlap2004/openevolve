@@ -5,6 +5,7 @@ Google Cloud GPU VM. It covers two jobs:
 
 - model training with `jobs/change_family_experiments.py`
 - OpenEvolve looping with `openevolve-run.py` and the disaster-vision surrogate
+- process artifact capture for a video or slide walkthrough
 
 The training script expects local filesystem paths with this structure:
 
@@ -154,7 +155,65 @@ Checkpoints are written under the configured OpenEvolve output directory. After
 the loop finishes, inspect the best evolved program and copy its returned config
 into `run_training_gce.sh` environment variables for a real cloud training run.
 
-## 7. Stop or delete the VM
+## 7. Capture process artifacts for a video
+
+After running OpenEvolve and at least one real training job, collect visual
+evidence for a presentation or demo video:
+
+```bash
+cd ~/openevolve
+source .venv/bin/activate
+
+bash disaster_vision-main/cloud/capture_process_artifacts.sh
+```
+
+This writes:
+
+```text
+disaster_vision-main/process_artifacts/
+  storyboard.md
+  manifest.csv
+  summary.json
+  frames/
+  evidence/
+```
+
+The storyboard contains narration notes. The frames folder contains ordered PNGs
+for a video sequence:
+
+- overview of the optimization process
+- OpenEvolve candidate score distribution
+- cloud training validation metrics
+- copied model prediction/diagnostic examples when present
+
+To include a specific training run:
+
+```bash
+TRAINING_RUN=disaster_vision-main/jobs/runs/<run_id> \
+bash disaster_vision-main/cloud/capture_process_artifacts.sh
+```
+
+If `ffmpeg` is installed on the VM, create a simple MP4 from the generated
+frames:
+
+```bash
+MAKE_VIDEO=1 bash disaster_vision-main/cloud/capture_process_artifacts.sh
+```
+
+The optional video is written to:
+
+```text
+disaster_vision-main/process_artifacts/disaster_vision_process.mp4
+```
+
+Sync the capture package back to Cloud Storage:
+
+```bash
+export BUCKET="gs://your-disaster-vision-bucket"
+gsutil -m rsync -r disaster_vision-main/process_artifacts "$BUCKET/process_artifacts"
+```
+
+## 8. Stop or delete the VM
 
 Stop the VM when you are not actively using the GPU:
 
@@ -167,4 +226,3 @@ Delete it when the run is complete and outputs are synced:
 ```bash
 gcloud compute instances delete "$VM_NAME" --zone "$ZONE"
 ```
-
