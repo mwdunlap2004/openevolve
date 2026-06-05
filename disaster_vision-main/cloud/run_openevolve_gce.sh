@@ -11,9 +11,10 @@ fi
 
 cd "$REPO_ROOT"
 
-python openevolve-run.py \
+PYTHON_BIN=${PYTHON_BIN:-"$REPO_ROOT/.venv/bin/python"}
+
+"$PYTHON_BIN" openevolve-run.py \
   disaster_vision-main/openevolve/initial_program.py \
   disaster_vision-main/openevolve/evaluator.py \
   --config disaster_vision-main/openevolve/config.yaml \
   --iterations "$ITERATIONS"
-

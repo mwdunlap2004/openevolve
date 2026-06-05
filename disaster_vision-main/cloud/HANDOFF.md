@@ -1,71 +1,55 @@
-# Disaster Vision Google Cloud Handoff
+# Disaster Vision / OpenEvolve Cloud Handoff
 
-Last updated: June 4, 2026
+Last updated: June 5, 2026, 12:06 PM ET
 
-This document captures the current Google Cloud state and the exact next steps
-for continuing the `disaster_vision-main` OpenEvolve and model-training work.
+This handoff is for continuing the `disaster_vision-main` work on the Google
+Cloud GPU VM. The current focus is running OpenEvolve overnight to evolve better
+training recipes, then using the best recipe for real disaster-vision model
+training.
 
-## Goal
+## Current Status
 
-Run two workflows in Google Cloud:
-
-1. Run the OpenEvolve loop to evolve disaster-vision training recipes.
-2. Run real model training for selected recipes on a GPU VM.
-
-OpenEvolve currently uses a surrogate evaluator, so it can run on CPU. Real
-model training should run on the GPU VM.
-
-## Project And Account
-
-Google Cloud account:
-
-```bash
-upw4ys@virginia.edu
-```
-
-Project:
-
-```bash
-project-01a04f95-aba2-4967-a5c
-```
-
-Compute Engine API is enabled. GPU quota was approved. A working US L4 GPU zone
-was found by actively probing VM creation from the CLI.
-
-## Running VMs
-
-There are currently two running VMs.
+OpenEvolve is now working through OpenRouter with:
 
 ```text
-NAME                   ZONE           MACHINE_TYPE   EXTERNAL_IP
-disaster-vision-setup  us-central1-a  e2-standard-8  35.193.173.61
-disaster-vision-gpu    us-west1-a     g2-standard-8  35.233.213.207
+model: qwen/qwen3.6-plus
+api_base: https://openrouter.ai/api/v1
+parallel_evaluations: 1
+max_iterations: 900
+early_stopping_patience: 900
+checkpoint_interval: 10
 ```
 
-The GPU VM is the important one for training:
+The first successful run improved the surrogate score:
 
 ```text
-GPU VM: disaster-vision-gpu
+baseline combined_score: 0.8684
+best observed combined_score: 1.0372
+best recipe family: siamese_bottleneck_concat_absdiff
+```
+
+The OpenRouter key works with `qwen/qwen3.6-plus`. Earlier free OpenRouter
+models failed because of OpenRouter workspace privacy/guardrail policy.
+
+## Google Cloud Project
+
+```text
+Project ID: project-01a04f95-aba2-4967-a5c
+Account: upw4ys@virginia.edu
+```
+
+The old CPU VM was deleted. The active VM is:
+
+```text
+Name: disaster-vision-gpu
 Zone: us-west1-a
 Machine: g2-standard-8
-GPU: 1 NVIDIA L4
-GPU memory: 23034 MiB
-Driver: 580.159.03
-CUDA runtime shown by nvidia-smi: 13.0
-Root disk: 243G total, about 240G free before Python dependency setup
+GPU: NVIDIA L4, 23034 MiB
+Boot disk: 250 GB
+Image: Ubuntu accelerator image with NVIDIA driver 580
 ```
 
-Verified on the GPU VM:
-
-```bash
-nvidia-smi
-```
-
-Output showed one `NVIDIA L4`.
-
-## SSH Commands
-
-GPU VM:
+SSH:
 
 ```bash
 gcloud compute ssh disaster-vision-gpu \
@@ -73,143 +57,202 @@ gcloud compute ssh disaster-vision-gpu \
   --zone us-west1-a
 ```
 
-CPU setup VM:
-
-```bash
-gcloud compute ssh disaster-vision-setup \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-central1-a
-```
-
-## Current Repo State On VMs
-
-Local repository root:
-
-```bash
-/Users/michaeldunlap/Desktop/Recents/UVA_MSDS_Work/big_data/openevolve
-```
-
-The repo archive was uploaded and unpacked on the GPU VM:
+Repo on VM:
 
 ```bash
 ~/openevolve
 ```
 
-The GPU VM already has the source tree, including:
+Project subdir:
 
 ```bash
-~/openevolve/disaster_vision-main/cloud/README.md
-~/openevolve/disaster_vision-main/cloud/HANDOFF.md
-~/openevolve/disaster_vision-main/cloud/setup_gce.sh
-~/openevolve/disaster_vision-main/cloud/sync_data_from_gcs.sh
-~/openevolve/disaster_vision-main/cloud/run_openevolve_gce.sh
-~/openevolve/disaster_vision-main/cloud/run_training_gce.sh
-~/openevolve/disaster_vision-main/cloud/capture_process_artifacts.sh
-~/openevolve/disaster_vision-main/cloud/make_process_storyboard.py
+~/openevolve/disaster_vision-main
 ```
 
-The GPU VM has system Python tooling installed:
+Python env:
+
+```bash
+~/openevolve/.venv
+```
+
+## Live OpenEvolve Run
+
+At handoff time, the original 60-iteration run is still active:
+
+```text
+wrapper PID: 18635
+main PID: 18637
+worker PID: 18646
+```
+
+An overnight supervisor is queued:
+
+```text
+supervisor PID: 18962
+script: ~/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+```
+
+The supervisor waits for the active 60-iteration run to finish, then resumes
+from the latest checkpoint for 900 more iterations.
+
+Check process status:
+
+```bash
+pgrep -af "openevolve-run|run_openevolve|overnight_qwen36plus"
+```
+
+Watch the active run:
+
+```bash
+tail -f "$(ls -t ~/openevolve/disaster_vision-main/logs/openevolve_qwen36plus_*.log | head -1)"
+```
+
+Watch the overnight supervisor:
+
+```bash
+tail -f ~/openevolve/disaster_vision-main/logs/openevolve_overnight_supervisor.out
+```
+
+When the overnight run starts, find its log:
+
+```bash
+ls -t ~/openevolve/disaster_vision-main/logs/openevolve_qwen36plus_overnight_*.log | head -1
+```
+
+Then tail it:
+
+```bash
+tail -f "$(ls -t ~/openevolve/disaster_vision-main/logs/openevolve_qwen36plus_overnight_*.log | head -1)"
+```
+
+## API Key Handling
+
+Do not commit API keys.
+
+The VM uses:
+
+```bash
+~/.disaster_vision_env
+```
+
+Expected content:
+
+```bash
+export OPENROUTER_API_KEY='sk-or-v1-...'
+```
+
+Load and verify without printing the key:
+
+```bash
+source ~/.disaster_vision_env
+echo "${#OPENROUTER_API_KEY}"
+```
+
+If the length is `0`, reset it:
+
+```bash
+cat > ~/.disaster_vision_env
+```
+
+Paste:
+
+```bash
+export OPENROUTER_API_KEY='sk-or-v1-your-key-here'
+```
+
+Press `Ctrl+D`, then:
+
+```bash
+chmod 600 ~/.disaster_vision_env
+source ~/.disaster_vision_env
+echo "${#OPENROUTER_API_KEY}"
+```
+
+Direct API smoke test:
+
+```bash
+curl -s https://openrouter.ai/api/v1/chat/completions \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"qwen/qwen3.6-plus","messages":[{"role":"user","content":"Reply OK only."}],"max_tokens":20}'
+```
+
+Success should return a normal chat completion. A `404` with
+`guardrail restrictions and data policy` means the OpenRouter key/workspace is
+blocking that model.
+
+## Important Files
+
+Local repo files:
+
+```text
+disaster_vision-main/openevolve/config.yaml
+disaster_vision-main/openevolve/initial_program.py
+disaster_vision-main/openevolve/evaluator.py
+disaster_vision-main/cloud/run_openevolve_gce.sh
+disaster_vision-main/cloud/run_training_gce.sh
+disaster_vision-main/cloud/capture_process_artifacts.sh
+disaster_vision-main/cloud/make_process_storyboard.py
+```
+
+VM logs:
+
+```text
+~/openevolve/disaster_vision-main/logs/openevolve_qwen36plus_20260605_160044.log
+~/openevolve/disaster_vision-main/logs/openevolve_overnight_supervisor.out
+~/openevolve/disaster_vision-main/logs/openevolve_overnight_wait_20260605_160525.log
+```
+
+VM checkpoints:
+
+```text
+~/openevolve/disaster_vision-main/openevolve/openevolve_output/checkpoints/checkpoint_10
+~/openevolve/disaster_vision-main/openevolve/openevolve_output/checkpoints/checkpoint_20
+```
+
+More checkpoints should appear every 10 iterations.
+
+## Extract Best OpenEvolve Result
+
+After the run finishes, inspect logs for best programs:
+
+```bash
+cd ~/openevolve/disaster_vision-main
+grep -R "New best program\\|🌟 New best solution\\|combined_score" logs/openevolve_qwen36plus*.log | tail -80
+grep -R "candidate_config" openevolve/openevolve_output | tail -40
+```
+
+Find final checkpoints:
+
+```bash
+find openevolve/openevolve_output/checkpoints -maxdepth 1 -type d -name "checkpoint_*" | sort -V | tail
+```
+
+Use the best `candidate_config` as the recipe for real training.
+
+## Dataset Status
+
+Current VM dataset state:
+
+```text
+~/openevolve/disaster_vision-main/data.zip exists, about 6.8 GB
+~/openevolve/disaster_vision-main/data is not extracted yet, about 20 KB
+```
+
+The previous extraction failed because `unzip` was not installed. To finish:
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y python3.10-venv python3-pip
+sudo apt-get install -y unzip
+cd ~/openevolve/disaster_vision-main
+mkdir -p data
+unzip -q data.zip -d data
+du -sh data
+find data -maxdepth 4 -type d | head -80
 ```
 
-Next step on the GPU VM is to run the project setup script:
-
-```bash
-cd ~/openevolve
-bash disaster_vision-main/cloud/setup_gce.sh
-```
-
-That script creates `~/openevolve/.venv`, installs Python dependencies, installs
-OpenEvolve editable, and checks PyTorch/CUDA visibility.
-
-The CPU setup VM already completed this setup and can run OpenEvolve. On that
-CPU VM, PyTorch installed successfully but `cuda_available` is false, which is
-expected.
-
-## How The GPU VM Was Found
-
-Initial GPU creation attempts failed due to `ZONE_RESOURCE_POOL_EXHAUSTED`.
-An active CLI probe then found capacity in:
-
-```text
-zone=us-west1-a
-machine=g2-standard-8
-gpu=nvidia-l4
-instance=disaster-vision-gpu
-```
-
-Successful creation command:
-
-```bash
-gcloud compute instances create disaster-vision-gpu \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-west1-a \
-  --machine-type g2-standard-8 \
-  --accelerator type=nvidia-l4,count=1 \
-  --maintenance-policy TERMINATE \
-  --provisioning-model STANDARD \
-  --boot-disk-size 250GB \
-  --image-family ubuntu-accelerator-2204-amd64-with-nvidia-580 \
-  --image-project ubuntu-os-accelerator-images \
-  --scopes cloud-platform
-```
-
-Earlier failed zones included `us-central1-a`, `us-central1-b`,
-`us-central1-c`, and others. The current working zone is `us-west1-a`.
-
-## Immediate Next Steps
-
-1. SSH into the GPU VM.
-2. Run the setup script on the GPU VM.
-3. Confirm PyTorch sees CUDA.
-4. Sync the dataset from Cloud Storage.
-5. Run a one-epoch smoke training job.
-6. Run the OpenEvolve loop if not already done.
-7. Train the best evolved recipe.
-8. Capture process artifacts for the final video/demo.
-9. Stop idle VMs to control cost.
-
-## Step 1: Finish GPU VM Setup
-
-```bash
-gcloud compute ssh disaster-vision-gpu \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-west1-a
-```
-
-Then on the VM:
-
-```bash
-cd ~/openevolve
-bash disaster_vision-main/cloud/setup_gce.sh
-```
-
-After setup, verify:
-
-```bash
-source .venv/bin/activate
-python - <<'PY'
-import torch
-print("torch:", torch.__version__)
-print("cuda_available:", torch.cuda.is_available())
-if torch.cuda.is_available():
-    print("cuda_device:", torch.cuda.get_device_name(0))
-PY
-```
-
-Expected result on the GPU VM:
-
-```text
-cuda_available: True
-cuda_device: NVIDIA L4
-```
-
-## Step 2: Dataset Sync
-
-The training script expects this local structure:
+After extraction, identify the actual train/validation roots. Training expects
+split folders shaped like:
 
 ```text
 split_root/
@@ -217,187 +260,58 @@ split_root/
   labels/
 ```
 
-Once the dataset is staged in Cloud Storage, run on the GPU VM:
+## Real Training Run
 
-```bash
-cd ~/openevolve
-source .venv/bin/activate
-export BUCKET="gs://your-disaster-vision-bucket"
-bash disaster_vision-main/cloud/sync_data_from_gcs.sh
-```
+After choosing a recipe and extracting data, run a smoke job first.
 
-Default local paths:
-
-```bash
-~/data/xview2_jpeg/tier1
-~/data/xview2_jpeg/hold
-```
-
-If the bucket uses different paths, override:
-
-```bash
-TRAIN_PREFIX="$BUCKET/path/to/tier1" \
-VAL_PREFIX="$BUCKET/path/to/hold" \
-bash disaster_vision-main/cloud/sync_data_from_gcs.sh
-```
-
-## Step 3: Smoke Test Training
-
-Run this on the GPU VM after data sync:
+Example:
 
 ```bash
 cd ~/openevolve
 source .venv/bin/activate
 
+TRAIN_ROOT=/path/to/train_split \
+VAL_ROOT=/path/to/val_split \
 EPOCHS=1 \
-DEBUG_SAMPLES=2 \
-BATCH_SIZE=2 \
-bash disaster_vision-main/cloud/run_training_gce.sh
-```
-
-This should create a run under:
-
-```bash
-disaster_vision-main/jobs/runs/
-```
-
-Check:
-
-```bash
-ls -lah disaster_vision-main/jobs/runs
-```
-
-## Step 4: Full Training Recipe
-
-After the smoke test works:
-
-```bash
-cd ~/openevolve
-source .venv/bin/activate
-
-EXPERIMENT_NAME=siamese_shared_concat_absdiff_bottleneck_cloud \
-INPUT_MODE=siamese \
-ENCODER_MODE=shared \
-FUSION_STRATEGY=concat_absdiff \
-FUSION_STAGE=bottleneck_only \
-EPOCHS=100 \
-BATCH_SIZE=8 \
+BATCH_SIZE=4 \
 LR=3e-4 \
 CLS_WEIGHT=2.0 \
-DAMAGE_LOSS_MODE=ordinal \
-DAMAGE_LOSS_ALPHA=0.5 \
+DAMAGE_LOSS_MODE=ce \
+INPUT_MODE=siamese \
+FUSION_STRATEGY=concat_absdiff \
+FUSION_STAGE=bottleneck_only \
+ENCODER_MODE=shared \
 bash disaster_vision-main/cloud/run_training_gce.sh
 ```
 
-If CUDA memory is tight, reduce:
+Then run the longer job with more epochs after the smoke test passes.
 
-```bash
-BATCH_SIZE=4
-```
+## Capture Evidence For Video / Presentation
 
-If still tight:
-
-```bash
-BATCH_SIZE=2
-IMAGE_SIZE=224
-BASE_CHANNELS=16
-```
-
-## Step 5: Run OpenEvolve
-
-OpenEvolve can run on either VM. Use the CPU setup VM to save GPU cost, or run
-it on the GPU VM if that is simpler.
-
-On either VM:
+The repo includes scripts for making a process storyboard from logs,
+checkpoints, and model artifacts:
 
 ```bash
 cd ~/openevolve
-source .venv/bin/activate
-export OPENROUTER_API_KEY="..."
-ITERATIONS=60 bash disaster_vision-main/cloud/run_openevolve_gce.sh
-```
-
-Do not commit API keys. Use environment variables only.
-
-OpenEvolve task files:
-
-```bash
-disaster_vision-main/openevolve/initial_program.py
-disaster_vision-main/openevolve/evaluator.py
-disaster_vision-main/openevolve/config.yaml
-```
-
-## Optional: OpenCode With Gemini
-
-If using OpenCode CLI with Gemini:
-
-```bash
-export GEMINI_API_KEY="..."
-opencode
-```
-
-Optional VM-local env file:
-
-```bash
-printf 'export GEMINI_API_KEY="your-key"\n' >> ~/.disaster_vision_env
-printf 'source ~/.disaster_vision_env\n' >> ~/.bashrc
-```
-
-Do not put `GEMINI_API_KEY` or `OPENROUTER_API_KEY` in the repo.
-
-## Step 6: Capture Process Artifacts
-
-After OpenEvolve and at least one training run:
-
-```bash
-cd ~/openevolve
-source .venv/bin/activate
 bash disaster_vision-main/cloud/capture_process_artifacts.sh
 ```
 
-Expected output:
+Expected outputs are under:
 
-```bash
+```text
 disaster_vision-main/process_artifacts/
 ```
 
-Contents:
+Use these for screenshots/video:
 
-```text
-storyboard.md
-manifest.csv
-summary.json
-frames/
-evidence/
-```
+- OpenEvolve log snippets showing iterations and new best programs.
+- Candidate configs from successful and failed programs.
+- MAP-Elites/checkpoint artifacts.
+- Training outputs once real training runs.
 
-If `ffmpeg` is installed:
+## Cost Control
 
-```bash
-MAKE_VIDEO=1 bash disaster_vision-main/cloud/capture_process_artifacts.sh
-```
-
-## Sync Outputs Back To Cloud Storage
-
-```bash
-export BUCKET="gs://your-disaster-vision-bucket"
-gsutil -m rsync -r disaster_vision-main/jobs/runs "$BUCKET/runs"
-gsutil -m rsync -r disaster_vision-main/process_artifacts "$BUCKET/process_artifacts"
-```
-
-## Cost Controls
-
-Both VMs are currently running. Stop anything idle.
-
-Stop the CPU setup VM:
-
-```bash
-gcloud compute instances stop disaster-vision-setup \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-central1-a
-```
-
-Stop the GPU VM:
+The GPU VM is billable while running. Stop it when not actively running:
 
 ```bash
 gcloud compute instances stop disaster-vision-gpu \
@@ -405,7 +319,7 @@ gcloud compute instances stop disaster-vision-gpu \
   --zone us-west1-a
 ```
 
-Start the GPU VM:
+Restart later:
 
 ```bash
 gcloud compute instances start disaster-vision-gpu \
@@ -413,40 +327,27 @@ gcloud compute instances start disaster-vision-gpu \
   --zone us-west1-a
 ```
 
-Delete the GPU VM when done:
+## Known Issues
 
-```bash
-gcloud compute instances delete disaster-vision-gpu \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-west1-a
-```
+- OpenRouter free models were blocked by workspace privacy/guardrail policy.
+- `qwen/qwen3.6-plus` works with the current OpenRouter key.
+- Gemini API worked but hit free-tier quota quickly.
+- OpenAI API would require separate paid API billing; ChatGPT Plus is separate.
+- Big Pickle is an OpenCode Zen model and needs `OPENCODE_API_KEY`; it does not
+  work with an OpenRouter key through the raw OpenEvolve API path.
+- Some evolved candidates fail validation by inventing invalid values such as
+  `input_mode: before_after` or `fusion_strategy: concat+absdiff`. That is normal
+  search noise; the evaluator rejects those candidates with score `0.0`.
 
-Before deleting, sync outputs back to Cloud Storage or local disk.
+## Immediate Next Steps For Friend
 
-## Quick Status Commands
-
-List VMs:
-
-```bash
-gcloud compute instances list \
-  --project project-01a04f95-aba2-4967-a5c
-```
-
-Check GPU:
-
-```bash
-gcloud compute ssh disaster-vision-gpu \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-west1-a \
-  --command 'nvidia-smi'
-```
-
-Check disk:
-
-```bash
-gcloud compute ssh disaster-vision-gpu \
-  --project project-01a04f95-aba2-4967-a5c \
-  --zone us-west1-a \
-  --command 'df -h /'
-```
-
+1. SSH into `disaster-vision-gpu`.
+2. Confirm OpenEvolve is still running or the overnight supervisor has started.
+3. Let the overnight run finish unless there are repeated API errors.
+4. Extract the best evolved `candidate_config`.
+5. Install `unzip` and extract `data.zip`.
+6. Locate train/validation split roots.
+7. Run a one-epoch training smoke test using the best recipe.
+8. Run the full training job.
+9. Capture process artifacts for the final video/demo.
+10. Stop the GPU VM when idle.

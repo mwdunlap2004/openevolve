@@ -4,7 +4,7 @@
 # in disaster_vision-main/jobs/. The evaluator uses historical runs as a
 # surrogate score because the private dataset is not bundled with this repo.
 
-max_iterations: 60
+max_iterations: 900
 checkpoint_interval: 10
 log_level: "INFO"
 random_seed: 42
@@ -14,10 +14,12 @@ allow_full_rewrites: false
 max_program_length: 12000
 
 llm:
-  primary_model: "gemini-2.5-flash-lite"
-  primary_model_weight: 0.8
-  secondary_model: "gemini-2.5-flash"
-  secondary_model_weight: 0.2
+  api_base: "https://openrouter.ai/api/v1"
+  api_key: "${OPENROUTER_API_KEY}"
+  primary_model: "qwen/qwen3.6-plus"
+  primary_model_weight: 1.0
+  secondary_model: "qwen/qwen3.6-plus"
+  secondary_model_weight: 0.0
   temperature: 0.7
   top_p: 0.95
   max_tokens: 4096
@@ -49,10 +51,10 @@ database:
 
 evaluator:
   timeout: 10
-  max_retries: 1
+  max_retries: 0
   cascade_evaluation: false
-  parallel_evaluations: 4
+  parallel_evaluations: 1
   use_llm_feedback: false
 
-early_stopping_patience: 20
+early_stopping_patience: 900
 early_stopping_metric: "combined_score"

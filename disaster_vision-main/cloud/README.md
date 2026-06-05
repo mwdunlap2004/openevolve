@@ -50,13 +50,15 @@ gcloud compute instances create "$VM_NAME" \
   --maintenance-policy TERMINATE \
   --provisioning-model STANDARD \
   --boot-disk-size 250GB \
-  --image-family pytorch-latest-gpu \
-  --image-project deeplearning-platform-release \
-  --metadata install-nvidia-driver=True
+  --image-family ubuntu-accelerator-2204-amd64-with-nvidia-580 \
+  --image-project ubuntu-os-accelerator-images \
+  --scopes cloud-platform
 ```
 
 If GPU quota is unavailable in the chosen zone, switch zones or request quota
-for the selected GPU type.
+for the selected GPU type. If the project is still on the Google Cloud free
+tier, upgrade the billing account before creating the GPU VM; non-TPU
+accelerators are blocked on free-tier billing accounts.
 
 ## 3. Upload data and code
 
