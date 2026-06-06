@@ -1,0 +1,223 @@
+overnight supervisor started at 2026-06-05T16:05:25+00:00
+waiting for existing OpenEvolve run to finish
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+18635 bash disaster_vision-main/cloud/run_openevolve_gce.sh
+18637 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18646 /home/michaeldunlap/openevolve/.venv/bin/python openevolve-run.py disaster_vision-main/openevolve/initial_program.py disaster_vision-main/openevolve/evaluator.py --config disaster_vision-main/openevolve/config.yaml --iterations 60
+18962 bash /home/michaeldunlap/openevolve/disaster_vision-main/logs/run_openevolve_overnight_qwen36plus.sh
+resuming at 2026-06-05T17:00:25+00:00 from checkpoint: disaster_vision-main/openevolve/openevolve_output/checkpoints/checkpoint_60

@@ -1,0 +1,69 @@
+# OpenEvolve configuration for real GPU-backed disaster-vision training trials.
+# Each candidate runs change_family_experiments.py for OE_TRAINING_EPOCHS
+# epochs, then scores equal-weight validation metrics.
+
+max_iterations: 60
+checkpoint_interval: 5
+log_level: "INFO"
+random_seed: 42
+
+diff_based_evolution: true
+allow_full_rewrites: false
+max_program_length: 12000
+
+llm:
+  api_base: "https://openrouter.ai/api/v1"
+  api_key: "${OPENROUTER_API_KEY}"
+  primary_model: "qwen/qwen3.6-plus"
+  primary_model_weight: 1.0
+  secondary_model: "qwen/qwen3.6-plus"
+  secondary_model_weight: 0.0
+  temperature: 0.45
+  top_p: 0.9
+  max_tokens: 4096
+  timeout: 180
+  retries: 1
+  retry_delay: 10
+
+prompt:
+  num_top_programs: 3
+  num_diverse_programs: 1
+  include_artifacts: true
+  max_artifact_bytes: 16000
+  system_message: |
+    You are optimizing a disaster-vision change-detection training recipe.
+
+    The evaluator runs each candidate as a real GPU training trial for 10 epochs.
+    It scores the best epoch using equal weights:
+    - val_joint_score
+    - val_dice
+    - val_iou
+    - val_cls_f1
+
+    Return only valid configurations. Use exactly these categorical values:
+    - input_mode: after_only or siamese
+    - encoder_mode: shared or separate
+    - fusion_strategy: concat, absdiff, or concat_absdiff
+    - fusion_stage: bottleneck_only or multiscale
+    - damage_loss_mode: ce, ordinal, or hierarchical
+    - selection_metric: joint, dice, cls_f1, or cls_acc
+
+    Avoid invalid aliases like before_after or concat+absdiff. Favor compact,
+    plausible changes that can train within the short 10-epoch budget.
+
+database:
+  population_size: 24
+  archive_size: 16
+  num_islands: 3
+  elite_selection_ratio: 0.25
+  exploitation_ratio: 0.65
+
+evaluator:
+  timeout: 7200
+  max_retries: 0
+  cascade_evaluation: false
+  parallel_evaluations: 1
+  use_llm_feedback: false
+
+early_stopping_patience: 60
+early_stopping_metric: "combined_score"
